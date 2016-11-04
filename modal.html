@@ -1,0 +1,30 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h1 class="modal-title">Payment details</h1>
+            </div>
+            <div class="modal-body text-left">
+                <p><span class="modal-details-headings">Supplier: </span>{{payment.payment_supplier}}</p>
+
+                <p><span class="modal-details-headings">Reference No.: </span>{{payment.payment_ref}}</p>
+
+                <!--<p><span class="modal-details-headings">Pound Rating: </span>{{payment.payment_cost_rating}}</p>-->
+                <p><span class="modal-details-headings">Pound Rating: </span><span ng-repeat="i in [] | range:5"
+                                                                                   class="pound-sign"
+                                                                                   ng-class="{active: $index < payment.payment_cost_rating }">&pound;</span>
+                </p>
+
+                <p><span class="modal-details-headings">Value: </span>&pound;{{payment.payment_amount | decimal2comma}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="close('No')" class="btn btn-default close-button" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
