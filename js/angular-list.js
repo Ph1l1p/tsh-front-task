@@ -74,7 +74,7 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
             templateUrl: 'modal.html',
             controller: "ModalController",
             inputs: {
-                payment: payment,
+                payment: payment
             }
         }).then(function (modal) {
             modal.element.modal();
@@ -108,11 +108,11 @@ app.filter('decimal2comma', [
         };
     }]);
 
-app.filter('range', function() {
-    return function(input, total) {
+app.filter('range', function () {
+    return function (input, total) {
         total = parseInt(total);
 
-        for (var i=0; i<total; i++) {
+        for (var i = 0; i < total; i++) {
             input.push(i);
         }
 
@@ -123,7 +123,7 @@ app.filter('range', function() {
 app.controller('ModalController', function ($scope, payment, close) {
 
     $scope.close = function (result) {
-        close(result, 500); // close, but give 500ms for bootstrap to animate
+        close(result, 500);
     };
 
     $scope.test = '1234312543414543';
