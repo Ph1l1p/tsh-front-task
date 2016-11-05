@@ -55,7 +55,7 @@
             </select>
 
             <button ng-click="resetFilters()" type="button" class="btn btn-default reset-button">Reset</button>
-            <button ng-click="selectPage('page=0')" type="button" class="btn btn-default search-button"
+            <button ng-click="applyFilters()" type="button" class="btn btn-default search-button"
                     ng-disabled="(!search && ! pounds)">
                 Search
             </button>
@@ -70,43 +70,46 @@
             <div class="table-responsive" ng-if="!error">
                 <table class="table table-striped table-hover payments-table">
                     <thead>
-                    <tr>
-                        <th class="suppliers-header">Supplier</th>
-                        <th class="rating-header">Pound Rating</th>
-                        <th class="reference-header">Reference</th>
-                        <th>Value</th>
-                    </tr>
+                        <tr>
+                            <th class="suppliers-header">Supplier</th>
+                            <th class="rating-header">Pound Rating</th>
+                            <th class="reference-header">Reference</th>
+                            <th>Value</th>
+                        </tr>
                     </thead>
-                    <tfoot>
-                    <td colspan="6">
-                        <div class="text-center">
-                            <ul class="pagination" ng-if="pagination['total']>1">
-                                <li ng-class="{disabled: !pagination['leftEnd']}">
-                                    <a href ng-click="!pagination['leftEnd'] || selectPage('0')">&#10094;</a>
-                                </li>
-                                <li ng-repeat="(index,link) in pagination['links']"
-                                <li ng-repeat="(index,link) in pagination['links']"
-                                    ng-class="{active: index == getPageValue()}"
-                                    ng-click="selectPage(link)">
-                                    <a href ng-bind="( index | num ) + 1"></a>
-                                </li>
-                                <li ng-class="{disabled: !pagination['rightEnd']}">
-                                    <a href ng-click=" !pagination['rightEnd'] || goToLastPage()">&#10095;</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </td>
-                    </tfoot>
                     <tbody>
-                    <tr ng-repeat="payment in payments" ng-click="show(payment);">
-                        <td>{{payment.payment_supplier}}</td>
-                        <td><span ng-repeat="i in [] | range:5" class="pound-sign"
-                                  ng-class="{active: $index < payment.payment_cost_rating }">&pound;</span></td>
-                        <td>{{payment.payment_ref}}</td>
-                        <td>&pound;{{payment.payment_amount | decimal2comma}}</td>
-                    </tr>
+                        <tr ng-repeat="payment in payments" ng-click="show(payment);">
+                            <td>{{payment.payment_supplier}}</td>
+                            <td><span ng-repeat="i in [] | range:5" class="pound-sign"
+                                      ng-class="{active: $index < payment.payment_cost_rating }">&pound;</span></td>
+                            <td>{{payment.payment_ref}}</td>
+                            <td>&pound;{{payment.payment_amount | decimal2comma}}</td>
+                        </tr>
                     </tbody>
                 </table>
+                <div class="pagination-box text-center">
+                    <ul class="pagination" ng-if="pagination['total']>1">
+                        <li ng-if="pagination['leftEnd']">
+                            <a class="pagination-arrows" href ng-click="goToPage(pagination['links']['0'])">&#10094; &#10094;</a>
+                        </li>
+                        <li ng-if="pagination['left']">
+                            <a class="pagination-arrows" href ng-click="goToPage(pagination['links'][(pagination['current']-1)])">
+                                &#10094;</a>
+                        </li>
+                        <li ng-repeat="(index,link) in (pagination['links'] | paginationFilter:pagination['from']:pagination['to'])"
+                            ng-class="{active: index == pagination['current']}"
+                            ng-click="goToPage(link)">
+                            <a href ng-bind="( index | num ) + 1"></a>
+                        </li>
+                        <li ng-if="pagination['right']">
+                            <a class="pagination-arrows" href ng-click="goToPage(pagination['links'][(pagination['current']|num)+1])">&#10095;</a>
+                        </li>
+                        <li ng-if="pagination['rightEnd']">
+                            <a class="pagination-arrows" href ng-click="goToPage(pagination['links'][(pagination['total']-1)])">
+                                &#10095;&#10095;</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -114,7 +117,7 @@
 <!--Custom angularJS script-->
 <script src="js/angular-list.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".select-input").select2({
             placeholder: "Select pound rating",
             allowClear: true,

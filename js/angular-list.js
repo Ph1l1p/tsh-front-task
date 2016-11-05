@@ -1,13 +1,17 @@
 /**
  * Created by Filip on 2016-11-03.
  */
+
 'use strict';
 
 var app = angular.module('suppliers-list-app', ['angularModalService']);
+
 app.service('PaymentsService', function ($http) {
 
-    this.getPayments = function (search_query, rating, page) {
-        return $http.get("http://test-api.kuria.tshdev.io/?query=" + search_query + "&rating=" + rating + "&" + page)
+    var urlPath = "http://test-api.kuria.tshdev.io/?";
+
+    this.getPayments = function (link) {
+        return $http.get(urlPath + link)
             .then(function (response) {
                 if (typeof response.data === 'object') {
                     return response.data;
@@ -16,12 +20,18 @@ app.service('PaymentsService', function ($http) {
             });
     };
 
-    this.setPage = function (value) {
-        return 'page=' + value;
-    };
-
-    this.getPage = function (value) {
-        return value.match(/\d+$/)[0];
+    this.filterPayments = function (search, rating) {
+        var link = '';
+        var search_not_empty = false;
+        if (search) {
+            link += 'query=' + search;
+            search_not_empty = true;
+        }
+        if (rating) {
+            if (search_not_empty) link += '&';
+            link += 'rating=' + rating;
+        }
+        return this.getPayments(link);
     };
 
 });
@@ -33,12 +43,11 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
     $scope.resetFilters = function () {
         $scope.search = "";
         $scope.pounds = "";
-        $scope.currentPage = PaymentsService.setPage('0');
-        $scope.updatePayments();
+        $scope.goToPage('');
     };
 
-    $scope.updatePayments = function () {
-        PaymentsService.getPayments($scope.search, $scope.pounds, $scope.currentPage).then(function (response) {
+    $scope.goToPage = function (link) {
+        PaymentsService.getPayments(link).then(function (response) {
             if (response) {
                 $scope.error = false;
                 $scope.response_data = response;
@@ -49,25 +58,18 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
         });
     };
 
-    $scope.selectPage = function (value) {
-        $scope.currentPage = value;
-        $scope.updatePayments();
+    $scope.applyFilters = function () {
+        PaymentsService.filterPayments($scope.search, $scope.pounds)
+            .then(function (response) {
+                if (response) {
+                    $scope.error = false;
+                    $scope.response_data = response;
+                    $scope.payments = $scope.response_data['payments'];
+                    $scope.pagination = $scope.response_data['pagination'];
+                }
+                else $scope.error = true;
+            });
     };
-
-    $scope.getPageValue = function () {
-        return PaymentsService.getPage($scope.currentPage);
-    };
-
-    $scope.goToLastPage = function () {
-        $scope.selectPage($scope.pagination['links'][$scope.pagination['total'] - 1]);
-    };
-
-    $scope.showModal = function (payment) {
-
-    };
-
-    $scope.resetFilters();
-
 
     $scope.show = function (payment) {
         ModalService.showModal({
@@ -78,11 +80,11 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
             }
         }).then(function (modal) {
             modal.element.modal();
-            modal.close.then(function (result) {
-                $scope.message = "You said " + result;
-            });
         });
     };
+
+    $scope.goToPage('');
+
 });
 
 app.filter('num', function () {
@@ -91,22 +93,21 @@ app.filter('num', function () {
     };
 });
 
-app.filter('decimal2comma', [
-    function () {
-        return function (input) {
-            var ret = (input) ? input.toString().replace(".", ",") : null;
-            if (ret) {
-                var decArr = ret.split(",");
-                if (decArr.length > 1) {
-                    var dec = decArr[1].length;
-                    if (dec === 1) {
-                        ret += "0";
-                    }
+app.filter('decimal2comma', function () {
+    return function (input) {
+        var ret = (input) ? input.toString().replace(".", ",") : null;
+        if (ret) {
+            var decArr = ret.split(",");
+            if (decArr.length > 1) {
+                var dec = decArr[1].length;
+                if (dec === 1) {
+                    ret += "0";
                 }
             }
-            return ret;
-        };
-    }]);
+        }
+        return ret;
+    };
+});
 
 app.filter('range', function () {
     return function (input, total) {
@@ -120,12 +121,23 @@ app.filter('range', function () {
     };
 });
 
+app.filter('paginationFilter', function () {
+    return function (items, from, to) {
+        var filtered = {};
+        angular.forEach(items, function (value, key) {
+            if (key >= from && key < to) {
+                filtered[key] = value;
+            }
+        });
+        return filtered;
+    };
+});
+
+
 app.controller('ModalController', function ($scope, payment, close) {
 
     $scope.close = function (result) {
         close(result, 500);
     };
-
-    $scope.test = '1234312543414543';
     $scope.payment = payment;
 });

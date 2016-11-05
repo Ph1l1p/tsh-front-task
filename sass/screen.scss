@@ -189,31 +189,35 @@ html {
             }
           }
         }
-
-        .pagination {
-          margin: 10px 0;
-          li {
-            a {
-              width: 25px;
-              height: 25px;
-              line-height: 24px;
-              margin: 0 2px;
-              @include border-radius(2px);
-              font-size: 12px;
-              font-weight: bold;
-              padding: 0;
-              color: #717171;
-              @include background-image(linear-gradient(white, #eaeaea));
-              border-color: #bbbbbb;
+        .pagination-box {
+          .pagination {
+            margin: 20px 0 15px;
+            li {
+              a {
+                width: 25px;
+                height: 25px;
+                line-height: 24px;
+                margin: 0 2px;
+                @include border-radius(2px);
+                font-size: 12px;
+                font-weight: bold;
+                padding: 0;
+                color: #717171;
+                @include background-image(linear-gradient(white, #eaeaea));
+                border-color: #bbbbbb;
+                &.pagination-arrows {
+                  font-size: 10px;
+                }
+              }
             }
-          }
-          .active {
-            a {
-              color: white;
-              border-color: #575757;
-              background-image: none;
-              background-color: #686868;
-              @include box-shadow(#575757 0 0 3px 1px inset);
+            .active {
+              a {
+                color: white;
+                border-color: #575757;
+                background-image: none;
+                background-color: #686868;
+                @include box-shadow(#575757 0 0 3px 1px inset);
+              }
             }
           }
         }
