@@ -43,7 +43,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12 filters-bar">
-            <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" class="form-control search-input"
+            <input type="text" ng-model="search" class="form-control search-input"
                    placeholder="Search suppliers"/>
             <select class="selectpicker select-input" ng-model="pounds">
                 <option value="" selected>Select pound rating</option>
@@ -120,7 +120,7 @@
     $(document).ready(function () {
         $(".select-input").select2({
             placeholder: "Select pound rating",
-            allowClear: true,
+            allowClear: false,
             minimumResultsForSearch: Infinity
         });
     });

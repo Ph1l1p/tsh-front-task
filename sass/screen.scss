@@ -7,6 +7,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+@import "compass/css3/user-interface";
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
 
 $color_H1: #2288b7;
@@ -18,7 +19,8 @@ $table_radius: 3px;
 html {
   background-image: url('../images/bg2.jpg');
   body {
-    font-family: 'Source Sans Pro', sans-serif !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
     max-width: 980px;
     margin: 77px auto !important;
     background-color: transparent;
@@ -30,13 +32,13 @@ html {
       font-size: 60px;
       color: $color_H1;
       margin-bottom: 8px;
+      font-family: 'Source Sans Pro', sans-serif;
     }
     hr {
       border-color: $color_hr;
-      margin-bottom: 17px;
+      margin-bottom: 18px;
     }
     .container-fluid, .container {
-      //height: auto !important;
       padding-left: 20px;
       padding-right: 20px;
       min-height: 500px;
@@ -45,21 +47,22 @@ html {
       @include box-shadow(rgba(0, 0, 0, 0.05) 0 0 0 6px);
 
       .heading-description {
+        font-family: 'Source Sans Pro', sans-serif;
         font-size: 17px;
         margin-bottom: 24px;
       }
       .filters-bar {
         margin-bottom: 18px;
         .search-input {
+          font-size: 12px;
           display: inline-block;
           width: 370px;
           height: 29px;
           margin-right: $inputs_break;
           @include border-radius(3px);
-
         }
         .select-input {
-          width: 150px;
+          width: 160px;
           height: 18px;
           padding: 0 5px;
           @include border-radius(3px);
@@ -75,8 +78,10 @@ html {
           height: 29px;
           padding: 0;
           font-weight: bold;
+          font-size: 12px;
           vertical-align: top;
           border: none;
+          line-height: 29px;
         }
 
         .reset-button {
@@ -101,7 +106,6 @@ html {
         .payments-table {
           border-collapse: separate;
           border-spacing: 0;
-          font-size: 12px;
           margin-bottom: 0;
           thead, tbody {
             tr {
@@ -149,6 +153,7 @@ html {
               height: 58px;
               th {
                 border-top: 1px solid $color_table_border !important;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                 font-weight: bold;
                 vertical-align: middle;
                 &.suppliers-header {
@@ -196,10 +201,9 @@ html {
               a {
                 width: 25px;
                 height: 25px;
-                line-height: 24px;
+                line-height: 25px;
                 margin: 0 2px;
                 @include border-radius(2px);
-                font-size: 12px;
                 font-weight: bold;
                 padding: 0;
                 color: #717171;
@@ -259,7 +263,6 @@ html {
   }
   .select2 {
     &.select2-container {
-      width: 160px !important;
       height: 29px;
       vertical-align: top;
       margin-right: 9px;
@@ -283,6 +286,7 @@ html {
               .select2-selection__placeholder {
                 display: block;
                 color: #434343;
+                font-family: Arial, Helvetica, sans-serif;
                 font-size: 11px;
                 text-align: left;
               }
