@@ -16,14 +16,18 @@ app.directive('wbSelect2', function () {
             element.select2({
                 placeholder: "Select pound rating",
                 allowClear: false,
-                minimumResultsForSearch: Infinity
+                minimumResultsForSearch: Infinity,
+                //dropdownParent: $('.filters-bar')
+                dropdownParent: angular.element(document.getElementsByClassName("filters-bar"))
             });
 
             scope.$watch('ngModel', function (newValue, oldValue) {
                 element.select2({
                     placeholder: "Select pound rating",
                     allowClear: false,
-                    minimumResultsForSearch: Infinity
+                    minimumResultsForSearch: Infinity,
+                    //dropdownParent: $('.filters-bar')
+                    dropdownParent: angular.element(document.getElementsByClassName("filters-bar"))
                 }).select('val', newValue);
             });
         }
