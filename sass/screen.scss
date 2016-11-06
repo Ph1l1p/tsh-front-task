@@ -52,13 +52,14 @@ html {
         margin-bottom: 24px;
       }
       .filters-bar {
-        margin-bottom: 18px;
+        margin-bottom: 12px;
         .search-input {
           font-size: 12px;
           display: inline-block;
           width: 370px;
           height: 29px;
           margin-right: $inputs_break;
+          margin-bottom: 5px;
           @include border-radius(3px);
         }
         .select-input {
