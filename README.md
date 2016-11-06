@@ -14,7 +14,7 @@ http://www.filipdiczew.pl/task
 - Bootstrap v3.3.7
 - Compass
 
-##Extension
+##Extensions
 
 - Select2 4.0.3  (https://select2.github.io/)
 - Angular Modal Service (http://dwmkerr.github.io/angular-modal-service/)
