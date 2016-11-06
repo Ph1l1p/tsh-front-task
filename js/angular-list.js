@@ -4,7 +4,31 @@
 
 'use strict';
 
-var app = angular.module('suppliers-list-app', ['angularModalService']);
+var app = angular.module('suppliersListApp', ['angularModalService']);
+
+app.directive('wbSelect2', function () {
+    return {
+        restrict: 'A',
+        scope: {
+            'ngModel': '='
+        },
+        link: function (scope, element, attrs) {
+            element.select2({
+                placeholder: "Select pound rating",
+                allowClear: false,
+                minimumResultsForSearch: Infinity
+            });
+
+            scope.$watch('ngModel', function (newValue, oldValue) {
+                element.select2({
+                    placeholder: "Select pound rating",
+                    allowClear: false,
+                    minimumResultsForSearch: Infinity
+                }).select('val', newValue);
+            });
+        }
+    };
+});
 
 app.service('PaymentsService', function ($http) {
 
@@ -43,10 +67,11 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
     $scope.resetFilters = function () {
         $scope.search = "";
         $scope.pounds = "";
-        $scope.goToPage('');
+        $scope.goToPage();
     };
 
     $scope.goToPage = function (link) {
+        if (!link) link = '';
         PaymentsService.getPayments(link).then(function (response) {
             if (response) {
                 $scope.error = false;
@@ -83,7 +108,7 @@ app.controller("PaymentsController", function ($scope, PaymentsService, ModalSer
         });
     };
 
-    $scope.goToPage('');
+    $scope.goToPage();
 
 });
 
