@@ -13,7 +13,7 @@
 $color_H1: #2288b7;
 $color_hr: #e0e0e0;
 $color_table_border: #d3d3d3;
-$inputs_break: 8px;
+$inputs_break: 7px;
 $table_radius: 3px;
 
 html {
@@ -22,23 +22,23 @@ html {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12px;
     max-width: 980px;
-    margin: 77px auto !important;
+    margin: 77px auto;
     background-color: transparent;
     text-align: center;
     padding-right: 0 !important;
-
     h1 {
       font-weight: 300;
       font-size: 60px;
       color: $color_H1;
       margin-bottom: 8px;
+      margin-top: 18px;
       font-family: 'Source Sans Pro', sans-serif;
     }
     hr {
       border-color: $color_hr;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
-    .container-fluid, .container {
+    .container-fluid, {
       padding-left: 20px;
       padding-right: 20px;
       @include border-radius(3px);
@@ -51,7 +51,11 @@ html {
         margin-bottom: 24px;
       }
       .filters-bar {
-        margin-bottom: 12px;
+        //// as mockup!
+        //text-align: left;
+        //padding-left: 106px;
+        ////mockup
+        margin-bottom: 14px;
         .search-input {
           font-size: 12px;
           display: inline-block;
@@ -68,6 +72,7 @@ html {
           @include border-radius(3px);
           @include box-shadow(#eaeced 0 0 0 6px);
           margin-right: $inputs_break;
+          margin-bottom: 5px;
           vertical-align: text-top;
           font-size: 11px;
           font-weight: bold;
@@ -82,6 +87,7 @@ html {
           vertical-align: top;
           border: none;
           line-height: 29px;
+          margin-bottom: 5px;
         }
 
         .reset-button {
@@ -103,16 +109,20 @@ html {
       }
       .table-responsive {
         border: none;
+        overflow: visible;
         .payments-table {
           border-collapse: separate;
           border-spacing: 0;
           margin-bottom: 0;
+          @include box-shadow(rgba(0, 0, 0, 0.15) 0 0 5px 0);
+          @include border-radius(3px);
           thead, tbody {
             tr {
               th, td {
+                // border-top: none;
                 border-right: 1px solid $color_table_border;
                 border-bottom: 1px solid $color_table_border;
-                padding: 5px;
+                padding: 0;
               }
               th:first-child, td:first-child {
                 border-left: 1px solid $color_table_border;
@@ -185,6 +195,11 @@ html {
               }
               td {
                 vertical-align: middle;
+              }
+              &:not(:first-of-type) {
+                td {
+                  border-top: none;
+                }
               }
             }
           }
@@ -259,14 +274,14 @@ html {
         @include background-image(linear-gradient(#8bcbe8, #4f9bde));
         color: white;
       }
-
     }
   }
   .select2 {
+    margin-bottom: 5px;
     &.select2-container {
       height: 29px;
       vertical-align: top;
-      margin-right: 9px;
+      margin-right: $inputs_break;
       .selection {
         .select2-selection {
           &.select2-selection--single {

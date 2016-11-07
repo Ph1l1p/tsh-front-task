@@ -77,26 +77,27 @@ html body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   max-width: 980px;
-  margin: 77px auto !important;
+  margin: 77px auto;
   background-color: transparent;
   text-align: center;
   padding-right: 0 !important;
 }
-/* line 30, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 html body h1 {
   font-weight: 300;
   font-size: 60px;
   color: #2288b7;
   margin-bottom: 8px;
+  margin-top: 18px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 /* line 37, ../sass/screen.scss */
 html body hr {
   border-color: #e0e0e0;
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 }
 /* line 41, ../sass/screen.scss */
-html body .container-fluid, html body .container {
+html body .container-fluid {
   padding-left: 20px;
   padding-right: 20px;
   -moz-border-radius: 3px;
@@ -108,29 +109,29 @@ html body .container-fluid, html body .container {
   box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 6px;
 }
 /* line 48, ../sass/screen.scss */
-html body .container-fluid .heading-description, html body .container .heading-description {
+html body .container-fluid .heading-description {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 17px;
   margin-bottom: 24px;
 }
 /* line 53, ../sass/screen.scss */
-html body .container-fluid .filters-bar, html body .container .filters-bar {
-  margin-bottom: 12px;
+html body .container-fluid .filters-bar {
+  margin-bottom: 14px;
 }
-/* line 55, ../sass/screen.scss */
-html body .container-fluid .filters-bar .search-input, html body .container .filters-bar .search-input {
+/* line 59, ../sass/screen.scss */
+html body .container-fluid .filters-bar .search-input {
   font-size: 12px;
   display: inline-block;
   width: 370px;
   height: 29px;
-  margin-right: 8px;
+  margin-right: 7px;
   margin-bottom: 5px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 64, ../sass/screen.scss */
-html body .container-fluid .filters-bar .select-input, html body .container .filters-bar .select-input {
+/* line 68, ../sass/screen.scss */
+html body .container-fluid .filters-bar .select-input {
   width: 160px;
   height: 18px;
   padding: 0 5px;
@@ -140,7 +141,8 @@ html body .container-fluid .filters-bar .select-input, html body .container .fil
   -moz-box-shadow: #eaeced 0 0 0 6px;
   -webkit-box-shadow: #eaeced 0 0 0 6px;
   box-shadow: #eaeced 0 0 0 6px;
-  margin-right: 8px;
+  margin-right: 7px;
+  margin-bottom: 5px;
   vertical-align: text-top;
   font-size: 11px;
   font-weight: bold;
@@ -151,8 +153,8 @@ html body .container-fluid .filters-bar .select-input, html body .container .fil
   background-image: -webkit-linear-gradient(#ffffff, #ededed);
   background-image: linear-gradient(#ffffff, #ededed);
 }
-/* line 76, ../sass/screen.scss */
-html body .container-fluid .filters-bar .reset-button, html body .container-fluid .filters-bar .search-button, html body .container .filters-bar .reset-button, html body .container .filters-bar .search-button {
+/* line 81, ../sass/screen.scss */
+html body .container-fluid .filters-bar .reset-button, html body .container-fluid .filters-bar .search-button {
   text-align: center;
   height: 29px;
   padding: 0;
@@ -161,11 +163,12 @@ html body .container-fluid .filters-bar .reset-button, html body .container-flui
   vertical-align: top;
   border: none;
   line-height: 29px;
+  margin-bottom: 5px;
 }
-/* line 87, ../sass/screen.scss */
-html body .container-fluid .filters-bar .reset-button, html body .container .filters-bar .reset-button {
+/* line 93, ../sass/screen.scss */
+html body .container-fluid .filters-bar .reset-button {
   width: 72px;
-  margin-right: 8px;
+  margin-right: 7px;
   color: #494949;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjZjhmOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M1YzVjNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -174,8 +177,8 @@ html body .container-fluid .filters-bar .reset-button, html body .container .fil
   background-image: -webkit-linear-gradient(#fcf8f8, #c5c5c5);
   background-image: linear-gradient(#fcf8f8, #c5c5c5);
 }
-/* line 94, ../sass/screen.scss */
-html body .container-fluid .filters-bar .search-button, html body .container .filters-bar .search-button {
+/* line 100, ../sass/screen.scss */
+html body .container-fluid .filters-bar .search-button {
   width: 80px;
   color: #f4f7fc;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU4OTdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzEyNmFlNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -185,32 +188,39 @@ html body .container-fluid .filters-bar .search-button, html body .container .fi
   background-image: -webkit-linear-gradient(#5897f7, #126ae6);
   background-image: linear-gradient(#5897f7, #126ae6);
 }
-/* line 101, ../sass/screen.scss */
-html body .container-fluid .no-results, html body .container .no-results {
+/* line 107, ../sass/screen.scss */
+html body .container-fluid .no-results {
   margin: 50px;
 }
-/* line 104, ../sass/screen.scss */
-html body .container-fluid .table-responsive, html body .container .table-responsive {
+/* line 110, ../sass/screen.scss */
+html body .container-fluid .table-responsive {
   border: none;
+  overflow: visible;
 }
-/* line 106, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table, html body .container .table-responsive .payments-table {
+/* line 113, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table {
   border-collapse: separate;
   border-spacing: 0;
   margin-bottom: 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
-/* line 112, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th, html body .container-fluid .table-responsive .payments-table thead tr td, html body .container-fluid .table-responsive .payments-table tbody tr th, html body .container-fluid .table-responsive .payments-table tbody tr td, html body .container .table-responsive .payments-table thead tr th, html body .container .table-responsive .payments-table thead tr td, html body .container .table-responsive .payments-table tbody tr th, html body .container .table-responsive .payments-table tbody tr td {
+/* line 121, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th, html body .container-fluid .table-responsive .payments-table thead tr td, html body .container-fluid .table-responsive .payments-table tbody tr th, html body .container-fluid .table-responsive .payments-table tbody tr td {
   border-right: 1px solid #d3d3d3;
   border-bottom: 1px solid #d3d3d3;
-  padding: 5px;
+  padding: 0;
 }
-/* line 117, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th:first-child, html body .container-fluid .table-responsive .payments-table thead tr td:first-child, html body .container-fluid .table-responsive .payments-table tbody tr th:first-child, html body .container-fluid .table-responsive .payments-table tbody tr td:first-child, html body .container .table-responsive .payments-table thead tr th:first-child, html body .container .table-responsive .payments-table thead tr td:first-child, html body .container .table-responsive .payments-table tbody tr th:first-child, html body .container .table-responsive .payments-table tbody tr td:first-child {
+/* line 127, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th:first-child, html body .container-fluid .table-responsive .payments-table thead tr td:first-child, html body .container-fluid .table-responsive .payments-table tbody tr th:first-child, html body .container-fluid .table-responsive .payments-table tbody tr td:first-child {
   border-left: 1px solid #d3d3d3;
 }
-/* line 120, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th, html body .container-fluid .table-responsive .payments-table tbody tr th, html body .container .table-responsive .payments-table thead tr th, html body .container .table-responsive .payments-table tbody tr th {
+/* line 130, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th, html body .container-fluid .table-responsive .payments-table tbody tr th {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZjJmMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U4ZWFlYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f1f2f2), color-stop(100%, #e8eaeb));
@@ -220,96 +230,100 @@ html body .container-fluid .table-responsive .payments-table thead tr th, html b
   border-top: 1px solid #d3d3d3;
   text-align: left;
 }
-/* line 126, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr:first-child th:first-child, html body .container-fluid .table-responsive .payments-table tbody tr:first-child th:first-child, html body .container .table-responsive .payments-table thead tr:first-child th:first-child, html body .container .table-responsive .payments-table tbody tr:first-child th:first-child {
+/* line 136, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr:first-child th:first-child, html body .container-fluid .table-responsive .payments-table tbody tr:first-child th:first-child {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
   border-top-left-radius: 3px;
 }
-/* line 129, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr:first-child th:last-child, html body .container-fluid .table-responsive .payments-table tbody tr:first-child th:last-child, html body .container .table-responsive .payments-table thead tr:first-child th:last-child, html body .container .table-responsive .payments-table tbody tr:first-child th:last-child {
+/* line 139, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr:first-child th:last-child, html body .container-fluid .table-responsive .payments-table tbody tr:first-child th:last-child {
   -moz-border-radius-topright: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 134, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr:last-child td:first-child, html body .container-fluid .table-responsive .payments-table tbody tr:last-child td:first-child, html body .container .table-responsive .payments-table thead tr:last-child td:first-child, html body .container .table-responsive .payments-table tbody tr:last-child td:first-child {
+/* line 144, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr:last-child td:first-child, html body .container-fluid .table-responsive .payments-table tbody tr:last-child td:first-child {
   -moz-border-radius-bottomleft: 3px;
   -webkit-border-bottom-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-/* line 137, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr:last-child td:last-child, html body .container-fluid .table-responsive .payments-table tbody tr:last-child td:last-child, html body .container .table-responsive .payments-table thead tr:last-child td:last-child, html body .container .table-responsive .payments-table tbody tr:last-child td:last-child {
+/* line 147, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr:last-child td:last-child, html body .container-fluid .table-responsive .payments-table tbody tr:last-child td:last-child {
   -moz-border-radius-bottomright: 3px;
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-/* line 142, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th:not(:first-of-type), html body .container-fluid .table-responsive .payments-table thead tr td:not(:first-of-type), html body .container-fluid .table-responsive .payments-table tbody tr th:not(:first-of-type), html body .container-fluid .table-responsive .payments-table tbody tr td:not(:first-of-type), html body .container .table-responsive .payments-table thead tr th:not(:first-of-type), html body .container .table-responsive .payments-table thead tr td:not(:first-of-type), html body .container .table-responsive .payments-table tbody tr th:not(:first-of-type), html body .container .table-responsive .payments-table tbody tr td:not(:first-of-type) {
+/* line 152, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th:not(:first-of-type), html body .container-fluid .table-responsive .payments-table thead tr td:not(:first-of-type), html body .container-fluid .table-responsive .payments-table tbody tr th:not(:first-of-type), html body .container-fluid .table-responsive .payments-table tbody tr td:not(:first-of-type) {
   text-align: center;
 }
-/* line 145, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th:first-of-type, html body .container-fluid .table-responsive .payments-table thead tr td:first-of-type, html body .container-fluid .table-responsive .payments-table tbody tr th:first-of-type, html body .container-fluid .table-responsive .payments-table tbody tr td:first-of-type, html body .container .table-responsive .payments-table thead tr th:first-of-type, html body .container .table-responsive .payments-table thead tr td:first-of-type, html body .container .table-responsive .payments-table tbody tr th:first-of-type, html body .container .table-responsive .payments-table tbody tr td:first-of-type {
+/* line 155, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th:first-of-type, html body .container-fluid .table-responsive .payments-table thead tr td:first-of-type, html body .container-fluid .table-responsive .payments-table tbody tr th:first-of-type, html body .container-fluid .table-responsive .payments-table tbody tr td:first-of-type {
   padding-left: 30px;
 }
-/* line 152, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr, html body .container .table-responsive .payments-table thead tr {
+/* line 162, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr {
   height: 58px;
 }
-/* line 154, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th, html body .container .table-responsive .payments-table thead tr th {
+/* line 164, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th {
   border-top: 1px solid #d3d3d3 !important;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   vertical-align: middle;
 }
-/* line 159, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th.suppliers-header, html body .container .table-responsive .payments-table thead tr th.suppliers-header {
+/* line 169, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th.suppliers-header {
   width: 58%;
   border-right: none;
 }
-/* line 163, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th.rating-header, html body .container .table-responsive .payments-table thead tr th.rating-header {
+/* line 173, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th.rating-header {
   width: 22%;
   border-left: none;
   border-right: none;
 }
-/* line 168, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table thead tr th.reference-header, html body .container .table-responsive .payments-table thead tr th.reference-header {
+/* line 178, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table thead tr th.reference-header {
   border-left: none;
   border-right: none;
 }
-/* line 177, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table tbody tr, html body .container .table-responsive .payments-table tbody tr {
+/* line 187, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tbody tr {
   cursor: pointer;
   height: 50px;
 }
-/* line 180, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table tbody tr:nth-of-type(odd), html body .container .table-responsive .payments-table tbody tr:nth-of-type(odd) {
+/* line 190, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tbody tr:nth-of-type(odd) {
   background-color: white;
 }
-/* line 183, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table tbody tr:nth-of-type(2n), html body .container .table-responsive .payments-table tbody tr:nth-of-type(2n) {
+/* line 193, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tbody tr:nth-of-type(2n) {
   background-color: #f7f7f7;
 }
-/* line 186, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table tbody tr td, html body .container .table-responsive .payments-table tbody tr td {
+/* line 196, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tbody tr td {
   vertical-align: middle;
 }
-/* line 192, ../sass/screen.scss */
-html body .container-fluid .table-responsive .payments-table tfoot td, html body .container .table-responsive .payments-table tfoot td {
+/* line 200, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tbody tr:not(:first-of-type) td {
+  border-top: none;
+}
+/* line 207, ../sass/screen.scss */
+html body .container-fluid .table-responsive .payments-table tfoot td {
   border-top: 0;
 }
-/* line 197, ../sass/screen.scss */
-html body .container-fluid .table-responsive .pagination-box, html body .container .table-responsive .pagination-box {
+/* line 212, ../sass/screen.scss */
+html body .container-fluid .table-responsive .pagination-box {
   height: 64px;
 }
-/* line 199, ../sass/screen.scss */
-html body .container-fluid .table-responsive .pagination-box .pagination, html body .container .table-responsive .pagination-box .pagination {
+/* line 214, ../sass/screen.scss */
+html body .container-fluid .table-responsive .pagination-box .pagination {
   margin: 20px 0 15px;
 }
-/* line 202, ../sass/screen.scss */
-html body .container-fluid .table-responsive .pagination-box .pagination li a, html body .container .table-responsive .pagination-box .pagination li a {
+/* line 217, ../sass/screen.scss */
+html body .container-fluid .table-responsive .pagination-box .pagination li a {
   width: 25px;
   height: 25px;
   line-height: 25px;
@@ -328,12 +342,12 @@ html body .container-fluid .table-responsive .pagination-box .pagination li a, h
   background-image: linear-gradient(#ffffff, #eaeaea);
   border-color: #bbbbbb;
 }
-/* line 213, ../sass/screen.scss */
-html body .container-fluid .table-responsive .pagination-box .pagination li a.pagination-arrows, html body .container .table-responsive .pagination-box .pagination li a.pagination-arrows {
+/* line 228, ../sass/screen.scss */
+html body .container-fluid .table-responsive .pagination-box .pagination li a.pagination-arrows {
   font-size: 10px;
 }
-/* line 219, ../sass/screen.scss */
-html body .container-fluid .table-responsive .pagination-box .pagination .active a, html body .container .table-responsive .pagination-box .pagination .active a {
+/* line 234, ../sass/screen.scss */
+html body .container-fluid .table-responsive .pagination-box .pagination .active a {
   color: white;
   border-color: #575757;
   background-image: none;
@@ -342,25 +356,25 @@ html body .container-fluid .table-responsive .pagination-box .pagination .active
   -webkit-box-shadow: #575757 0 0 3px 1px inset;
   box-shadow: #575757 0 0 3px 1px inset;
 }
-/* line 231, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 html body .modal {
   padding: 0;
 }
-/* line 233, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 html body .modal .modal-content {
   padding: 0 30px;
 }
-/* line 236, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 html body .modal .modal-content .modal-body .modal-details-headings {
   font-weight: bolder;
   width: 120px;
   display: inline-block;
 }
-/* line 242, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 html body .modal .modal-content .modal-footer {
   text-align: center;
 }
-/* line 247, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 html body .pound-sign {
   display: inline-block;
   width: 25px;
@@ -380,7 +394,7 @@ html body .pound-sign {
   background-image: -webkit-linear-gradient(#ffffff, #dadcdc);
   background-image: linear-gradient(#ffffff, #dadcdc);
 }
-/* line 258, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 html body .pound-sign.active {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhiY2JlOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzRmOWJkZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -390,13 +404,17 @@ html body .pound-sign.active {
   background-image: linear-gradient(#8bcbe8, #4f9bde);
   color: white;
 }
-/* line 266, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
+html .select2 {
+  margin-bottom: 5px;
+}
+/* line 281, ../sass/screen.scss */
 html .select2.select2-container {
   height: 29px;
   vertical-align: top;
-  margin-right: 9px;
+  margin-right: 7px;
 }
-/* line 272, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single {
   display: inline-block;
   background-color: #eaeced;
@@ -407,7 +425,7 @@ html .select2.select2-container .selection .select2-selection.select2-selection-
   border-radius: 3px;
   width: 160px;
 }
-/* line 279, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__rendered {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -424,7 +442,7 @@ html .select2.select2-container .selection .select2-selection.select2-selection-
   border: 1px solid #9c9c9c;
   margin: 5px;
 }
-/* line 287, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__rendered .select2-selection__placeholder {
   display: block;
   color: #434343;
@@ -432,17 +450,17 @@ html .select2.select2-container .selection .select2-selection.select2-selection-
   font-size: 11px;
   text-align: left;
 }
-/* line 295, ../sass/screen.scss */
+/* line 310, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__arrow {
   width: 25px;
 }
-/* line 297, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__arrow b {
   border-width: 3px 3px 0 3px;
   border-color: #434343 transparent transparent transparent;
   top: 17px;
 }
-/* line 303, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 html .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__arrow:after {
   content: '';
   border-color: transparent transparent #434343 transparent;
@@ -456,7 +474,7 @@ html .select2.select2-container .selection .select2-selection.select2-selection-
   width: 0;
   top: 11px;
 }
-/* line 323, ../sass/screen.scss */
+/* line 338, ../sass/screen.scss */
 html .select2.select2-container.select2-container--open .select2-selection__arrow b {
   border-color: #434343 transparent transparent transparent;
 }
